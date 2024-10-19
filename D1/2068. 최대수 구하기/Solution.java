@@ -20,6 +20,18 @@ import java.util.Scanner;
     출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 
     (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+    입력
+    3 
+    3 17 1 39 8 41 2 32 99 2
+    22 8 5 123 7 2 63 7 3 46
+    6 63 2 3 58 76 21 33 8 1
+
+    출력
+    #1 99
+    #2 123
+    #3 76
+
 */
 
 public class Solution {
@@ -33,12 +45,16 @@ public class Solution {
 
             for(int i = 0; i < arr.length; i++) {
                 arr[i] = sc.nextInt();
+            }
 
-                if(max < arr[i]) {
-                    max = arr[i];
+            // for-each 문
+            for(int number : arr) {
+                if(max < number) {
+                    max = number;
                 }
             }
             System.out.println("#" + test_case + " " + max);
         }
+        sc.close();
     }
 }
