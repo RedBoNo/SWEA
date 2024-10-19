@@ -30,7 +30,7 @@ import java.util.Scanner;
     출력
     #1 99
     #2 123
-    #3 76
+    #3 76 
 
 */
 
