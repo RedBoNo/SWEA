@@ -46,21 +46,14 @@ public class Solution {
         for (int i = 1; i <= T; i++) {
             // nextLine() 사용시 공백제거 해줘야 함
             String palindrome = sc.next();
-            // 회문 판단 변수 (맞으면 1 / 틀리면 0)
-            int result = 1;
+            // 회문 검사 변수
+            int result = 0;
+            // StringBuilder에 문자를 뒤집는 reserve() 메소드를 제공
+            String ReservePalindrome = new StringBuilder(palindrome).reverse().toString();
 
-            for (int j = 0; j < palindrome.length(); j++) {
-                /*
-                 * 첫 글자와 마지막 글자(N)가 같은지 검사
-                 * 두 번째 글자와 N-1 글자가 같은지 검사..
-                 * 다르면 0 반환 후 break;
-                 */
-                if (palindrome.charAt(j) != palindrome.charAt(palindrome.length() - (j + 1))) {
-                    result = 0;
-                    break;
-                }
-            }
-            System.out.println("#" + i + " " + result);
+            result = (palindrome.equals(ReservePalindrome)) ? 1 : 0;
+
+            System.out.printf("#%d %d\n", i, result);
         }
     }
 }
